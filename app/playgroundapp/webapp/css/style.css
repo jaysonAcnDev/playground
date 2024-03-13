@@ -1,0 +1,17 @@
+.formContainer {
+    border: 1px solid #ccc; /* Add a 1px solid border with color #ccc */
+    padding: 10px; /* Add padding to the container */
+    width: 300px; /* Adjust width as needed */
+}
+/* Define custom CSS classes */
+.deleteIcon .sapMBtnIcon {
+    color: red; /* Change the color to red */
+}
+.tableBox {
+    height: 50%;
+    overflow-y: auto;
+}
+.centeredHBox {
+    display: flex;
+    justify-content: center;
+}

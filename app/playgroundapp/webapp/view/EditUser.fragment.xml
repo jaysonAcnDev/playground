@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="EditDialog" title="Edit Information">
+        <content>
+            <VBox class="formContainer sapUiSmallMargin">
+                <Label text="Name" />
+                <Input id="editName"  value="{name}"/>
+
+                <Label text="Email" />
+                <Input id="editEmail" value="{email}" />
+
+                <Label text="Password" />
+                <Input id="editPassword" type="Password" value="password"/>
+            </VBox>
+            <HBox class="centeredHBox sapUiSmallMargin">
+                <Button text="Save" press="onEditUser" class="sapUiSmallMarginEnd" />
+                <Button text="Close" press=".onCloseDialog" />
+            </HBox>
+        </content>
+    </Dialog>
+</core:FragmentDefinition>

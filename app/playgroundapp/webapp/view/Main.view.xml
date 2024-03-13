@@ -1,0 +1,57 @@
+<mvc:View controllerName="playgroundapp.playgroundapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Shell>
+        <Page id="page" title="{i18n>title}" class="sapUiSmallMargin">
+            <content>
+                <!-- FlexBox to hold both sign-up form and table -->
+                <FlexBox alignItems="Start" justifyContent="Start" class="flexBoxContainer sapUiSmallMarginEnd" direction="Row">
+                    <!-- Sign-up form with 30% width and margin and padding -->
+                    <VBox class="formContainer sapUiSmallMargin" width="30%">
+                        <Title text="Sign Up" />
+                        <Label text="Name" />
+                        <Input id="nameInput" placeholder="Enter your name" />
+                        <Label text="Email" />
+                        <Input id="emailInput" placeholder="Enter your email" />
+                        <Label text="Password" />
+                        <Input id="passwordInput" type="Password" placeholder="Enter your password" />
+                        <Button text="Sign Up" press="onAddUser" />
+                    </VBox>
+
+                    <!-- Table with 70% width and margin and padding -->
+                    <VBox class="tableBox sapUiSmallMargin" width="70%">
+                        <Table id="userTable" items="{/Users}" growing="true" growingScrollToLoad="true" growingThreshold="5" class="tableBox">
+                            <columns>
+                                <Column width="30%">
+                                    <Text text="Name" />
+                                </Column>
+                                <Column width="30%">
+                                    <Text text="Email" />
+                                </Column>
+                                <Column width="25%">
+                                    <Text text="Password" />
+                                </Column>
+                                <Column width="15%">
+                                    <Text text="Action" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{name}" />
+                                        <Text text="{email}" />
+                                        <Text text="{password}" />
+                                        <HBox>
+                                            <Button press="onOpenDialog(${ID})" icon="sap-icon://edit" class="editIcon" />
+                                            <Button press="onRemoveUser(${ID})" icon="sap-icon://delete" class="deleteIcon" />
+                                        </HBox>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </FlexBox>
+            </content>
+        </Page>
+    </Shell>
+</mvc:View>
